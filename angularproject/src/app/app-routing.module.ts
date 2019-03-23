@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: './leftmenu/leftmenu.module#LeftmenuModule'
   },
   {
+    path: 'scroll',
+    loadChildren: './scroll/scroll.module#ScrollModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
