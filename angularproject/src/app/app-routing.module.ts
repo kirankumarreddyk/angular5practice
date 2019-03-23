@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: './capcha/capcha.module#CapchaModule'
   },
   {
+    path: 'blinkingtext',
+    loadChildren: './blinkingtext/blinkingtext.module#BlinkingtextModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

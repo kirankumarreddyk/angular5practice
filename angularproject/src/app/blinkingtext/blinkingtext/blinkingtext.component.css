@@ -1,0 +1,60 @@
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  }
+  /* // */
+  .blink{
+          width:200px;
+          height: 50px;
+          background-color: magenta;
+          padding: 15px;	
+          text-align: center;
+          line-height: 50px;
+      }
+      span{
+          font-size: 25px;
+          font-family: cursive;
+          color: white;
+          animation: blink 1s linear infinite;
+      }
+  @keyframes blink{
+  0%{opacity: 0;}
+  50%{opacity: .5;}
+  100%{opacity: 1;}
+  }
+  /* // */
+  .blinking{
+      animation:blinkingText 0.8s infinite;
+  }
+  @keyframes blinkingText{
+      0%{     color: #000;    }
+      49%{    color: transparent; }
+      50%{    color: transparent; }
+      99%{    color:transparent;  }
+      100%{   color: #000;    }
+  }
+  /* // */
+  div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+  }
+  
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+  }
+  
+  /* Standard syntax */
+  @keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+  }
+  
+  /* // */
+  
