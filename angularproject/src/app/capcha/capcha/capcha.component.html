@@ -1,0 +1,11 @@
+<form #feedback="ngForm" novalidate (ngSubmit)="submitvalidate(feedback.value, feedback.valid)">
+  <div class="row" style="padding:20px;">
+    <re-captcha [(ngModel)]="feedbackobj.captcha" name="captchaRef"  siteKey="{{siteKey}}" #captchaRef="ngModel" required></re-captcha>
+    <small [hidden]="captchaRef.valid || (captchaRef.pristine && !feedback.submitted)" class="text-danger">
+      Captcha is required.
+    </small>
+  </div>
+  <div class="clearfix" id="divcaptcha">
+    <button id="btnsubmit" class="btn btn-primary " ng-click="submit()">Submit</button>
+  </div>
+  </form>
