@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: './scroll/scroll.module#ScrollModule'
   },
   {
+    path: 'rightclickdisable',
+    loadChildren: './rightclickdisable/rightclickdisable.module#RightclickdisableModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
