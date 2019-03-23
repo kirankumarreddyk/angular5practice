@@ -1,0 +1,44 @@
+<div id="left">
+  <div id="divMenu">
+    <div class="dropdown">
+      <button class="dropbtn"><img class="assmain" src="assets/images/01.jpg"></button>
+      <div class="dropdown-content">
+        Name : hkkjkjk
+      </div>
+    </div>
+    <nav id="menu">
+      <ul class="parent-menu">
+        <li><a [routerLink]="['/myhome/logged']"><i class="fa fa-dashboard rr"></i></a>
+          <ul class="Dashboard">
+            <li><a [routerLink]="['/myhome/logged']">Dashboard</a></li>
+          </ul>
+        </li>
+        <li><a [routerLink]="['/editprofile/logged']"><i class="fa fa-user rr"></i></a>
+          <ul class="Edit_My_Profile">
+            <li><a [routerLink]="['/editprofile/logged']">Edit My Profile</a></li>
+          </ul>
+        </li>
+        <li><a [routerLink]="['/upgrademembership/logged']"><i class="fa fa-users rr"></i></a>
+          <ul class="upgrade_membership">
+            <li><a [routerLink]="['/upgrademembership/logged']">Upgrade Your Membership</a></li>
+          </ul>
+        </li>
+        <li><a [routerLink]="['/editmanagephoto/logged']"><i class="fa fa-picture-o rr"></i></a>
+          <ul class="manage_photo">
+            <li><a [routerLink]="['/editmanagephoto/logged']">Manage Photo</a></li>
+          </ul>
+        </li>
+        <li><a [routerLink]="['/profilesetting/logged']"><i class="fa fa-cog rr"></i></a>
+          <ul class="profile_setting">
+            <li><a [routerLink]="['/profilesetting/logged']">Profile Setting</a></li>
+          </ul>
+        </li>
+        <li><a [routerLink]="['/contactus/logged']"><i class="fa fa-question-circle rr"></i></a>
+          <ul class="help">
+            <li><a [routerLink]="['/contactus/logged']">Help</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

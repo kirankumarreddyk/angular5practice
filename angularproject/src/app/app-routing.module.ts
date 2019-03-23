@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: './blinkingtext/blinkingtext.module#BlinkingtextModule'
   },
   {
+    path: 'leftmenu',
+    loadChildren: './leftmenu/leftmenu.module#LeftmenuModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
