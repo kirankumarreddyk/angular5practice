@@ -43,6 +43,14 @@ const routes: Routes = [
     loadChildren: './showhide/showhide.module#ShowhideModule'
   },
   {
+    path: 'validations',
+    loadChildren: './validations/validations.module#ValidationsModule'
+  },
+  {
+    path: 'multiselect',
+    loadChildren: './multiselect/multiselect.module#MultiselectModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

@@ -1,0 +1,50 @@
+<form #help="ngForm" novalidate (ngSubmit)="submithelp(help.value, help.valid)">
+  <div class="control-group col-lg-3">
+    <label class="control-label">Category<span class="redpart">*</span></label>
+    <div class="controls clearfix" id="ddlcategorydd">
+      <ss-multiselect-dropdown name="Category" [options]="Categoryarray" [texts]="myTexts" [settings]="mysingleSettings"
+        [(ngModel)]="helpobj.Category" #Category="ngModel" required></ss-multiselect-dropdown>
+      <!-- <small [hidden]="Category.valid || (Category.pristine && !help.submitted)" class="text-danger">
+        Category is required.
+      </small> -->
+      <small *ngIf="(Category.invalid && help.submitted) ||((Category.valid) && (helpobj.Category !== null && helpobj.Category.toString()===''))"
+        class="text-danger propertyrequired">
+        Family Status is required.
+      </small>
+    </div>
+  </div>
+  
+  <div class="control-group col-lg-3">
+      <label class="p-label">Caste<span class="p-imp">*</span></label>
+          <div id="Mothertonguepart">
+            <ss-multiselect-dropdown class="" name="castename" [options]="EducationCategoryarray" [texts]="myTexts" [settings]="mySettings" [(ngModel)]="helpobj.castename" #castename="ngModel" required></ss-multiselect-dropdown>
+              <small *ngIf="(castename.invalid && help.submitted) ||((castename.valid) && (helpobj.castename!==null && helpobj.castename.toString()===''))" class="text-danger partnerrequired">
+               Caste is required.
+              </small>
+          </div>
+  </div>
+
+
+      <!-- select single value apply color -->
+        <div class="control-group col-lg-3">
+          <label class="control-label marginleft15">Marital status</label>
+          <div class="col-lg-12" #selectmaritalstatusadv>
+            <ss-multiselect-dropdown class="commonclasssmulti Professiongroup" name="MaritalStatus" [options]="MaritalStatusarray"
+              [texts]="myTexts" [settings]="mySettings" [(ngModel)]="helpobj.MaritalStatus" [ngClass]="applycolors(helpobj.MaritalStatus,selectmaritalstatusadv,'adv')"></ss-multiselect-dropdown>
+          </div>
+        </div>
+        <!-- input box -->
+         <div class="control-group col-lg-2">
+            <label class="control-label">Monthly  income</label>
+            <div class="row clearfix">
+                <div class="generalane row" id="monthlyincome" #selectmonthlyincomeadv>
+                    <input name="fromsalary" class="fromsalary col-lg-3" [(ngModel)]="helpobj.fromsalary" maxlength="7" #fromsalary="ngModel" placeholder="From" type="text"  [ngClass]="applycolorstxtbox(helpobj.fromsalary)">
+                    <input name="tosalary" placeholder="To" type="text" class="tosalary col-lg-3" maxlength="7" [(ngModel)]="helpobj.tosalary" #tosalary="ngModel"  [ngClass]="applycolorstxtbox(helpobj.tosalary)">
+                </div>
+            </div>
+         </div>
+          <!-- input box-->
+        <!-- select single value apply color -->
+      <input name="btnSub" value="submit" class="btn btn-primary" type="submit">
+
+  </form>

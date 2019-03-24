@@ -1,0 +1,69 @@
+<form class="form-inline" #BrotherForm="ngForm" novalidate (ngSubmit)="BrotherInsertSubmit(BrotherForm.value, BrotherForm.valid)"
+  accessible-form>
+  <div class="col-md-12 form-group">
+    <br> <br><br>
+    <label class="p-label col-md-2">Name<span class="p-imp">*</span></label>
+    <input type="text" class="form-control p-input" name="BroName" [(ngModel)]="brotherobj.BroName" #BroName="ngModel"
+      required>
+    <small [hidden]="BroName.valid || (BroName.pristine && !BrotherForm.submitted)" class="text-danger ">
+      Name is required.
+    </small>
+  </div>
+
+  <!-- mail required -->
+  <div class="form-group col-md-12">
+    <label class="p-label col-md-2">Email address:</label>
+    <input type="email" class="form-control" id="email" placeholder="Email Address" name="email" email="true"
+      [(ngModel)]="brotherobj.email" #email="ngModel" pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" required (blur)="email.valid ?valueExists('email',false,brotherobj.email):''">
+    <div *ngIf="BrotherForm.submitted && email.invalid" class="text-danger">
+      <div *ngIf="email?.errors.required" class="castereq">Email is required</div>
+      <div *ngIf="email?.errors.pattern" class="castereq">Email must be a valid email address</div>
+    </div>
+  </div>
+  <!-- mail required -->
+  <!-- Password required -->
+  <div class="form-group col-md-12">
+    <br>
+    <br>
+    <label class="p-label col-md-2">Password:</label>
+    <input type="password" class="form-control" name="password" id="pwd" placeholder="Enter any Password" [(ngModel)]="brotherobj.password"
+      #password="ngModel" minlength="6" maxlength="18" required>
+    <div *ngIf="password.errors && BrotherForm.submitted" class="text-danger">
+      <div *ngIf="password?.errors.required" class="castereq">
+        Password is required
+      </div>
+      <div *ngIf="password?.errors.minlength" class="castereq">
+        Password must be at least 6 characters long.
+      </div>
+    </div>
+  </div>
+  <!-- Password required -->
+
+  <!-- mobile number -->
+   <div class="form-group col-md-12">
+                <label class="col-md-2">Mobile:</label>
+                <input type="text" class="form-control mnumber" name="Mobilenumber" pattern="[0-9]{1}[0-9]{9}" placeholder="Enter Mobile" [(ngModel)]="brotherobj.Mobilenumber" maxlength="10" minlength="10" pattern="[0-9]{1}[0-9]{9}" #Mobilenumber="ngModel" required>
+                <div *ngIf="Mobilenumber.errors && BrotherForm.submitted" class="text-danger numberreq">
+                    <div *ngIf="Mobilenumber?.errors.required"> Number is required </div>
+                    <div *ngIf="Mobilenumber?.errors.minlength"> must be 10 numbers. </div>
+                </div>
+            </div>
+<!-- mobile number -->
+
+<!-- drop down -->
+   <div class="form-group">
+                <label>Posted By:</label>
+                <select class="form-control" id="sel1" name="looking_for" [(ngModel)]="brotherobj.looking_for" #looking_for="ngModel" required>
+                    <option *ngFor="let cat of looking_forarray" value="{{cat.value}}">{{cat.label}}</option>
+                </select>
+                <small [hidden]="looking_for.valid || (looking_for.pristine && !BrotherForm.submitted)" class="text-danger">
+                    posted by required
+                </small>
+            </div>
+<!-- drop down -->
+
+  <div class="col-md-6 ">
+    <br>
+    <button type="submit" class="btn btn-info">Submit</button>
+  </div>
+</form>
