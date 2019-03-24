@@ -74,7 +74,30 @@ const routes: Routes = [
     path: 'matradio',
     loadChildren: './matradio/matradio.module#MatradioModule'
   },
-  
+  {
+    path: 'mataccordian',
+    loadChildren: './mataccordian/mataccordian.module#MataccordianModule'
+  },
+  {
+    path: 'matcheckbox',
+    loadChildren: './matcheckbox/matcheckbox.module#MatcheckboxModule'
+  },
+  {
+    path: 'matinput',
+    loadChildren: './matinput/matinput.module#MatinputModule'
+  },
+  {
+    path: 'matselectbox',
+    loadChildren: './matselectbox/matselectbox.module#MatselectboxModule'
+  },
+  {
+    path: 'mattextarea',
+    loadChildren: './mattextarea/mattextarea.module#MattextareaModule'
+  },
+  {
+    path: 'mattabs',
+    loadChildren: './mattabs/mattabs.module#MattabsModule'
+  },
   {
     path: '',
     redirectTo: '',
