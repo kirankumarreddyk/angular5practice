@@ -103,6 +103,10 @@ const routes: Routes = [
     loadChildren: './matgrid/matgrid.module#MatgridModule'
   },
   {
+    path: 'inputshowhide',
+    loadChildren: './inputshowhide/inputshowhide.module#InputshowhideModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

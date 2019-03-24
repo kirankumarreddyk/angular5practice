@@ -1,0 +1,55 @@
+<div class="container">
+  <mat-radio-group name="workingpart" [(ngModel)]="professionobj.workingpart" #workingpart="ngModel" (change)="notworkingchange(professionobj.workingpart)">
+    <mat-radio-button value="0">Not Working</mat-radio-button>
+    <mat-radio-button value="1">Working</mat-radio-button>
+  </mat-radio-group>
+    <div class="col-md-12 " *ngIf="professionobj.workingpart==='1'?true:false">
+       <label class="p-label"> Spouse Name</label>
+       <input type="text" class="form-control p-input" name="SisHusbandName" [(ngModel)]="professionobj.SisHusbandName" #SisHusbandName="ngModel">
+   </div>
+      <div class="col-md-12 form-group " *ngIf="professionobj.workingpart==='0'?false:true" >
+        <label class="p-label cpname">Company Name <span class="p-imp">*</span></label>
+        <input type="email" class="form-control p-input cpname" name="companyName" [(ngModel)]="professionobj.companyName"
+          #companyName="ngModel" >
+      </div>
+  
+       <div class="col-md-12 form-group ">
+         <label class="p-label">Employed In  <span class="p-imp">*</span></label>
+         <div class="controls" id="employeeinpart">
+            <select class="form-control" id="sel1" name="looking_for" [(ngModel)]="professionobj.looking_for" #looking_for="ngModel" >
+              <option *ngFor="let cat of looking_forarray" value="{{cat.value}}">{{cat.label}}</option>
+            </select>
+         </div>
+        </div>
+  <br>
+    <div class="col-md-12 hocolmn">
+      <input type="checkbox" class="mothercontent" name="HouseWife" [(ngModel)]="professionobj.HouseWife" #HouseWife="ngModel"
+        (change)="motherhousewife()">
+      <label>HouseWife</label>
+    </div>
+    <div class="col-md-12 form-group p-margin p-padding" *ngIf="professionobj.HouseWife===true?false:true">
+      <label class="p-label">Profession Category<span class="p-imp">*</span></label>
+      <div class="controls clearfix" id="employeeinpart">
+        <input type="text" class="form-control p-input" name="professionCategoryId" [(ngModel)]="professionobj.professionCategoryId" #professionCategoryId="ngModel">
+      </div>
+    </div>
+    <div class="col-md-12 form-group p-margin p-padding" *ngIf="professionobj.HouseWife===true?false:true">
+      <label class="p-label">Designation</label>
+      <input type="text" class="form-control p-input" name="designation" [(ngModel)]="professionobj.designation" #designation="ngModel">
+    </div>
+  
+     <div class="col-md-12 form-group p-margin p-padding">
+         <label class="p-label">Designation</label>
+         <input type="text" class="form-control p-input" name="sisprofessiondetails" [(ngModel)]="professionobj.sisprofessiondetails" #sisprofessiondetails="ngModel">
+     </div>
+     <div class="col-md-12 hwpart">
+         <input type="checkbox" class="mothercontent" name="HouseWifechk" [(ngModel)]="professionobj.HouseWifechk" #HouseWifechk="ngModel" (change)="resetsisterpage();professionobj.HouseWifechk?professionobj.sisprofessiondetails='HouseWife':professionobj.sisprofessiondetails=''">
+         <label>HouseWife</label>
+     </div>
+       <div class="col-md-12 form-group p-margin p-padding" *ngIf="professionobj.HouseWifechk===false?true: false">
+          <label class="p-label cnamelabel">
+            Company Name</label>
+          <input type="text" class="form-control p-input sswife" name="SisCompanyName" [(ngModel)]="professionobj.SisCompanyName" #SisCompanyName="ngModel">
+      </div>
+  
+  </div>
