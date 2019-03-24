@@ -99,6 +99,10 @@ const routes: Routes = [
     loadChildren: './mattabs/mattabs.module#MattabsModule'
   },
   {
+    path: 'matgrid',
+    loadChildren: './matgrid/matgrid.module#MatgridModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
