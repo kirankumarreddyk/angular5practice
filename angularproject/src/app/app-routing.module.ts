@@ -35,6 +35,14 @@ const routes: Routes = [
     loadChildren: './headername/headername.module#HeadernameModule'
   },
   {
+    path: 'tabss',
+    loadChildren: './tabss/tabss.module#TabssModule'
+  },
+  {
+    path: 'showhide',
+    loadChildren: './showhide/showhide.module#ShowhideModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

@@ -1,0 +1,89 @@
+<!-- 1 hide and show-->
+<div class="nr-header-right" *ngIf="bannershows">
+  <button type="button" (click)="divhide=!divhide" class="btn btn-primary hidepart">Hide</button>
+  <ul *ngIf="divhide===false">
+    <li class="menuitem hidepart">
+      <a href="javascript:void(0)" (click)="redirectpages('login')"><i class="fa fa-sign-in" style="margin-right: 10px;font-size: 18px;"></i>Login
+        /</a>
+      <a class="losin" [routerLink]="['/']"> <i class="fa fa-registered" style="margin-right: 10px;font-size: 18px;"></i>Register</a>
+    </li>
+
+  </ul>
+</div>
+<!-- hide and show -->
+<!-- 2 show and hide fully-->
+<br>
+<br>
+<div class="nr-header-right" *ngIf="bannershows">
+  <button type="button" (click)="divfhide=!divfhide" *ngIf="divfhide===true" class="btn btn-alert hidepart1">Hide</button>
+  <ul *ngIf="divfhide===false">
+    <li class="menuitem hidepart">
+      <a href="javascript:void(0)" (click)="redirectpages('login')"><i class="fa fa-sign-in" style="margin-right: 10px;font-size: 18px;"></i>Login
+        /</a>
+      <a class="losin" [routerLink]="['/']"> <i class="fa fa-registered" style="margin-right: 10px;font-size: 18px;"></i>Register</a>
+    </li>
+
+  </ul>
+</div>
+<!-- show and hide fully-->
+<!--3 show and hide button -->
+<br>
+<br>
+<div class="nr-header-right" *ngIf="bannershows">
+  <button type="button" (click)="showbhide=!showbhide" class="btn btn-warning hidepart1" (click)="toggle()">{{buttonName}}</button>
+  <ul *ngIf="showbhide===false">
+    <li class="menuitem hidepart">
+      <a href="javascript:void(0)" (click)="redirectpages('login')"><i class="fa fa-sign-in" style="margin-right: 10px;font-size: 18px;"></i>Login
+        /</a>
+      <a class="losin" [routerLink]="['/']"> <i class="fa fa-registered" style="margin-right: 10px;font-size: 18px;"></i>Register</a>
+    </li>
+
+  </ul>
+</div>
+<!-- show and hide button -->
+
+
+<!--4 menu bottom content edit close -->
+
+<div class="container" style="margin-top:60px;">
+  <div>
+    <ul class="p-ul">
+      <li *ngFor="let item of headerarray" (click)="dynamicbind(item)">{{item}}</li>
+    </ul>
+  </div>
+  <div class="row">
+      <div class="alert alert-success">
+        <h4 style="display: inline-block;"> {{bindarray.item}}</h4>
+        <button title="formshow" type="button" class="btn btn-info edit" (click)="showhidectrls(btntext)" style="float: right;">{{btntext}}</button>
+      </div>
+      <div class="information" *ngIf="this.btntext === 'Edit'">
+        {{bindarray.value}}
+      </div>
+        <div class="formshow" *ngIf="this.btntext === 'Close'">
+          <div class="col-sm-5 form-group" >
+            <label class="col-sm-4 control-label" style="text-align: left;padding: 5px 0px;"><span style="color:red;">*</span>Profile
+              created for</label>
+            <span class="col-sm-1" style="padding: 5px">:</span>
+            <div class="col-sm-7">
+          
+              <select class="form-control" name="updt_profile_for">
+          
+              </select>
+            </div>
+          </div>
+            <div class="col-sm-5 form-group">
+              <label class="col-sm-4 control-label" style="text-align: left;padding: 5px 0px;"><span style="color:red;">*</span>Profile
+                profession for</label>
+              <span class="col-sm-1" style="padding: 5px">:</span>
+              <div class="col-sm-7">
+            
+                <select class="form-control" name="updt_profile_for">
+            
+                </select>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+
+<!--4 menu bottom content edit close -->
