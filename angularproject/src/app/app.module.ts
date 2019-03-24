@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonmenuComponent } from './commonmenu/commonmenu/commonmenu.component';
+import { CommonfooterComponent } from './commonfooter/commonfooter/commonfooter.component';
 import { from } from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
-    CommonmenuComponent
+    CommonmenuComponent,
+    CommonfooterComponent
   ],
   imports: [
     BrowserModule,

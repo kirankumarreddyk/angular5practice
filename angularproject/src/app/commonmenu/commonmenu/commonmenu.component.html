@@ -1,4 +1,7 @@
 
+<div id="divInnerMaster" *ngIf="menuhideurl">
+  <div class="top_header" [ngClass]="commonurlforclass.indexOf('/blockerController')!==-1?'top_header_diasabled':''"
+    >
 <nav class="navbar navbar-default">
   <div class="container-fluid">
   
@@ -37,3 +40,5 @@
     </ul>
   </div>
 </nav>
+</div>
+</div>
