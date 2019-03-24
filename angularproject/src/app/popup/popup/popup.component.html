@@ -1,0 +1,107 @@
+<!-- bootstrap popup no one install direct display -->
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<br>
+<br>
+<br>
+<!-- 2nd  -->
+<button type="button" class="btn btn-primary" (click)="showModal()">Render auto-shown modal</button>
+<div *ngIf="isModalShown" [config]="{ show: true }" (onHidden)="onHidden()" bsModal #autoShownModal="bs-modal" class="modal fade"
+  tabindex="-1" role="dialog" aria-labelledby="dialog-auto-name">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-auto-name" class="modal-title pull-left">Auto shown modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="hideModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>I am a modal that is shown right after initialization!</p>
+        <p>I wasn't present in DOM until you clicked the button</p>
+        <p>When you close me, I'll be removed from the DOM</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- popover -->
+<br>
+<br>
+<br>
+<button style="margin-left: 5%;" type="button" class="btn btn-default btn-secondary" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+  popoverTitle="Popover on top" placement="top">
+  Popover on top
+</button>
+
+<button style="margin-left: 10%;" type="button" class="btn btn-default btn-secondary" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+  popoverTitle="Popover on right" placement="right">
+  Popover on right
+</button>
+
+<button style="margin-left: 10%;" type="button" class="btn btn-default btn-secondary" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+  popoverTitle="Popover auto" placement="auto">
+  Popover auto
+</button>
+
+<button style="margin-left: 10%;" type="button" class="btn btn-default btn-secondary" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+  popoverTitle="Popover on left" placement="left">
+  Popover on left
+</button>
+
+<button style="margin-left: 10%;" type="button" class="btn btn-default btn-secondary" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+  popoverTitle="Popover on bottom" placement="bottom">
+  Popover on bottom
+</button>
+
+
+<!-- 2nd -->
+<h2>hover tooltip</h2>
+<br>
+<br>
+<button style="margin-left: 5%;" type="button" class="btn btn-default btn-secondary mb-2" tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+  placement="top">
+  Tooltip on top
+</button>
+
+<button style="margin-left: 10%;" type="button" class="btn btn-default btn-secondary mb-2" tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+  placement="right">
+  Tooltip on right
+</button>
+
+<button style="margin-left: 10%;" type="button" class="btn btn-default btn-secondary mb-2" tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+  placement="auto">
+  Tooltip auto
+</button>
+
+<button style="margin-left: 10%;" type="button" class="btn btn-default btn-secondary mb-2" tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+  placement="left">
+  Tooltip on left
+</button>
+
+<button style="margin-left: 10%;" type="button" class="btn btn-default btn-secondary mb-2" tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+  placement="bottom">
+  Tooltip on bottom
+</button>

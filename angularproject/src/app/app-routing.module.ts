@@ -59,6 +59,11 @@ const routes: Routes = [
     loadChildren: './pagetitle/pagetitle.module#PagetitleModule'
   },
   {
+    path: 'popup',
+    loadChildren: './popup/popup.module#PopupModule'
+  },
+  
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
