@@ -119,6 +119,10 @@ const routes: Routes = [
     loadChildren: './pagefromto/pagefromto.module#PagefromtoModule'
   },
   {
+    path: 'matfilldetails',
+    loadChildren: './matfilldetails/matfilldetails.module#MatfilldetailsModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
