@@ -66,6 +66,14 @@ const routes: Routes = [
     path: 'hidevalidation',
     loadChildren: './hidevalidation/hidevalidation.module#HidevalidationModule'
   },
+  {
+    path: 'addeditdelete',
+    loadChildren: './addeditdelete/addeditdelete.module#AddeditdeleteModule'
+  },
+  {
+    path: 'matradio',
+    loadChildren: './matradio/matradio.module#MatradioModule'
+  },
   
   {
     path: '',
