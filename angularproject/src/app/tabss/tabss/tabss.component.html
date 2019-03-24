@@ -1,3 +1,84 @@
-<p>
-  tabss works!
-</p>
+<br>
+<br>
+<div class="container" id="verticaltabs">
+  <div id="content">
+    <div id="main-content">
+      <mat-tab-group>
+        <!-- 1-->
+        <mat-tab label="Open Tabs">
+      <div>
+        <tabset>
+          <tab heading="Basic title" id="tab1">Basic content</tab>
+          <tab heading="Basic Title 1">Basic content 1</tab>
+          <tab heading="Basic Title 2">Basic content 2</tab>
+        </tabset>
+      </div>
+        </mat-tab>
+        <!-- 1-->
+        <!-- 2-->
+        <mat-tab label="Full Tabs" >
+          <div>
+            <ngb-tabset id="upgrademembership">
+              <ngb-tab>
+                <ng-template ngbTabTitle>
+                  <h3>arehgerh </h3>
+                </ng-template>
+                <ng-template ngbTabContent>
+                  <div class="content">
+                    <div class="row">
+                      <h3>arehgerh </h3>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab>
+                <ng-template ngbTabTitle class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                  <b>wegweg</b>
+                </ng-template>
+                <ng-template ngbTabContent>
+                  <div class="content">
+                    <div class="row">
+                      <h3>arehgerh </h3>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab>
+                <ng-template ngbTabTitle class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                  <h3>arehgerh </h3>
+                </ng-template>
+                <ng-template ngbTabContent>
+                  <div class="content">
+                    <div class="row">
+                      <h3>arehgerh </h3>
+                    </div>
+                  </div>
+                  <input type="button" class="btn btn-primary submitproceed" value="ggg">
+                  <br>
+                </ng-template>
+              </ngb-tab>
+            </ngb-tabset>
+          </div>
+          <!-- NGFOR -->
+          <div class="row" style="margin-top:10%; margin-left: 5%">
+            <br>
+            <ngb-tabset id="upgrademembership">
+              <ngb-tab *ngFor="let tab of tabs">
+                <ng-template ngbTabTitle>
+                  {{ tab.title }}
+                </ng-template>
+                <ng-template ngbTabContent>
+                  <!-- {{ tab.content }} -->
+                  serjdrty
+                </ng-template>
+              </ngb-tab>
+            </ngb-tabset>
+          </div>
+        </mat-tab>
+        <!-- 2-->
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
+<br>
+<br>
