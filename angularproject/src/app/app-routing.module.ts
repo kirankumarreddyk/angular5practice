@@ -51,6 +51,10 @@ const routes: Routes = [
     loadChildren: './multiselect/multiselect.module#MultiselectModule'
   },
   {
+    path: 'focusvalidations',
+    loadChildren: './focusvalidations/focusvalidations.module#FocusvalidationsModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
