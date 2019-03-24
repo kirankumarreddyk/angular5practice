@@ -111,6 +111,10 @@ const routes: Routes = [
     loadChildren: './listgrid/listgrid.module#ListgridModule'
   },
   {
+    path: 'matloading',
+    loadChildren: './matloading/matloading.module#MatloadingModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
