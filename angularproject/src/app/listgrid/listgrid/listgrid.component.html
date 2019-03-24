@@ -1,0 +1,30 @@
+<div class="btn-group pull-right">
+  <button class="btn btn-white"  type="button" (click)="onDisplayModeChange(1)" [ngClass]="{'btn-primary active': displayMode === 1}">
+    <i class="fa fa-th"></i>ergre
+  </button>
+  <button class="btn btn-white" type="displayMode"  (click)="onDisplayModeChange(2)" [ngClass]="{'btn-primary active': displayMode === 2}">
+    <i class="fa fa-list"></i>assd
+  </button>
+</div>
+
+<div class="row" *ngIf="displayMode === 1">
+  <img src="{{item.image}}" class="hover-animation image-zoom-in img-responsive col-md-4" alt="" *ngFor="let item of carouselTileItems">
+</div>
+
+<div class="row" *ngIf="displayMode === 2">
+  <div class="faqs_list_main_item col-md-12"  *ngFor="let person of peopled">{{ person.name }}</div>
+  <img src="{{item.image}}" class="hover-animation image-zoom-in img-responsive col-md-12" alt="" *ngFor="let item of carouselTileItems">
+ </div>
+
+  <!-- <a title="Grid View" (click)="gridView = true; listView = false">
+              <img class="icon-grid" alt="" src="gridview.png" *ngIf="!gridView">
+              <img class="icon-grid-active" alt="" src="icon_grid.png" *ngIf="gridView">
+          </a>
+          <a title="List View" (click)="gridView = false; listView = true">
+              <img class="icon-list" alt="" src="assets/images/icon_list.png" *ngIf='!listView'>
+              <img class="icon-list-active" alt="" src="assets/images/listview.png" *ngIf='listView'>
+          </a> -->
+  <!-- grid -->
+  <!-- <div [class.list_view_item]="listView" [class.grid_view_item]="gridView" class="searched_list_item clearfix" *ngFor="let item of carouselTileItems">
+    <img src="{{item.image}}" class="egrfgrgr" alt="">
+  </div> -->

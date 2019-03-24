@@ -107,6 +107,10 @@ const routes: Routes = [
     loadChildren: './inputshowhide/inputshowhide.module#InputshowhideModule'
   },
   {
+    path: 'listgrid',
+    loadChildren: './listgrid/listgrid.module#ListgridModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
