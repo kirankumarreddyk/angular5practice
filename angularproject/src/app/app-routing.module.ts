@@ -55,6 +55,10 @@ const routes: Routes = [
     loadChildren: './focusvalidations/focusvalidations.module#FocusvalidationsModule'
   },
   {
+    path: 'pagetitle',
+    loadChildren: './pagetitle/pagetitle.module#PagetitleModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
