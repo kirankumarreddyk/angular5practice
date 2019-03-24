@@ -115,6 +115,10 @@ const routes: Routes = [
     loadChildren: './matloading/matloading.module#MatloadingModule'
   },
   {
+    path: 'pagefromto',
+    loadChildren: './pagefromto/pagefromto.module#PagefromtoModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
