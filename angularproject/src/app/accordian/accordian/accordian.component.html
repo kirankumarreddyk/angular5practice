@@ -1,0 +1,43 @@
+<div class="register_page_main">
+  <h4>FAQ's</h4>
+  <div class="faq_main">
+    <div class="faq_main_head clearfix">
+      <div class="faq_main_search clearfix">
+        <fieldset>
+          <input id="search" type="text" [(ngModel)]="queryString">
+          <span></span>
+        </fieldset>
+      </div>
+      <div class="faq_grid clearfix">
+        <a href="javascript:void(0)" class="faq_expand" (click)="expanall()">Expand All</a>
+        <a href="javascript:void(0)" class="faq_collapse" (click)="collapseall()">Collapse All</a>
+      </div>
+    </div>
+    <div class="faqs_list_main">
+      <div>
+        <div class="faqs_list_main_item" [ngClass]="item.activeClass" *ngFor="let item of faqsarray | FilterPipe: queryString">
+          <h5 class="faq_toggle_heading" (click)="toggleans(item)">
+            <span class="HeaderCSS">{{item.label}}</span></h5>
+          <div class="faq_ans_block" [hidden]="!item.styleanswer">
+            <p>
+              <span [innerHTML]="item.value">{{item.value}}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2nd accordian -->
+<accordion>
+  <accordion-group heading="Header">
+    This content is straight in the template.
+  </accordion-group>
+  <accordion-group heading="Content 1">
+    <p>Content 1</p>
+  </accordion-group>
+  <accordion-group heading="Content 2">
+    <p>Content 2</p>
+  </accordion-group>
+</accordion>

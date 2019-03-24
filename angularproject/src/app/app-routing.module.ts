@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: './rightclickdisable/rightclickdisable.module#RightclickdisableModule'
   },
   {
+    path: 'accordian',
+    loadChildren: './accordian/accordian.module#AccordianModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

@@ -1,0 +1,13 @@
+.faqs_list_main {
+    border: 1px solid #ccc;
+    border-bottom: 0 none;
+    margin: 0 20px 20px;
+    border-radius: 3px;
+}
+.faqs_list_main_item {
+    padding: 0 20px;
+    border-bottom: solid 1px #ccc;
+}
+.faqs_list_main_item.active h5 span {
+    color: #d42e02;
+}
