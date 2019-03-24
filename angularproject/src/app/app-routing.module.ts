@@ -31,6 +31,10 @@ const routes: Routes = [
     loadChildren: './datepicker/datepicker.module#DatepickerModule'
   },
   {
+    path: 'headername',
+    loadChildren: './headername/headername.module#HeadernameModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
