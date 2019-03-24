@@ -123,6 +123,10 @@ const routes: Routes = [
     loadChildren: './matfilldetails/matfilldetails.module#MatfilldetailsModule'
   },
   {
+    path: 'matvalidations',
+    loadChildren: './matvalidations/matvalidations.module#MatvalidationsModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

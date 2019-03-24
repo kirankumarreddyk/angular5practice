@@ -1,0 +1,262 @@
+<mat-tab-group [selectedIndex]="selectedIndex" (selectedTabChange)="onLinkClick($event)">
+  <mat-tab label="EDIT PASSWORD">
+    <div id="passwordparty">
+      <br>
+      <div class="col-lg-12">
+        <h5 class="col-lg-4">Change Your Password
+          <b class="profilechangepassword">Edit
+            <span class="dots">:</span>
+          </b>
+        </h5>
+        <mat-slide-toggle (change)="passwordchk===false?reseteforms('password'):getCustidinformation()" [(ngModel)]="passwordchk"
+          color="primary" class="col-lg-1 passwordcheck"></mat-slide-toggle>
+      </div>
+      <br>
+      <form #Profilesettingpassform="ngForm" novalidate (ngSubmit)="submitpassword(Profilesettingpassform.value, Profilesettingpassform.valid);Profilesettingpassform.valid?Profilesettingpassform.resetForm():'';">
+        <div class="col-lg-12">
+          <div class="form-group  col-lg-4">
+            <mat-form-field [hideRequiredMarker]="true" class="example-full-width">
+              <input matInput name="Password" (blur)="currentpasswordvalidation(passwordobj.Password,'old')" [disabled]="passwordchk===false"
+                placeholder="Current Password" [(ngModel)]="passwordobj.Password" type="password" #Password="ngModel"
+                required>
+              <mat-error *ngIf="Password.errors && Password?.errors.required"> current password is required.</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group  col-lg-4">
+            <mat-form-field [hideRequiredMarker]="true" class="example-full-width">
+              <input matInput (blur)="currentpasswordvalidation(passwordobj.unewpass,'new')" name="unewpass" (change)="passwordobj.unewpass===''?passwordobj.uconfmnewpass='':''"
+                [disabled]="passwordchk===false" placeholder="New Password" [(ngModel)]="passwordobj.unewpass" type="password"
+                #unewpass="ngModel" required minlength="6" maxlength="16">
+              <mat-error *ngIf="unewpass.errors && unewpass?.errors.required"> New password is required.</mat-error>
+              <mat-error *ngIf="unewpass.errors && unewpass?.errors.minlength">Password must be at least 6 characters
+                long.</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group  col-lg-4">
+            <mat-form-field [hideRequiredMarker]="true" class="example-full-width">
+              <input matInput name="uconfmnewpass" [disabled]="passwordchk===false" placeholder="Confirm New Password"
+                [(ngModel)]="passwordobj.uconfmnewpass" type="password" #uconfmnewpass="ngModel" required
+                validateEqualTo="unewpass">
+              <mat-error *ngIf="uconfmnewpass.errors && uconfmnewpass?.errors.required"> Confirm password is required.</mat-error>
+            </mat-form-field>
+            <small *ngIf="passwordobj.uconfmnewpass!=='' && uconfmnewpass.invalid && !uconfmnewpass.pristine" class="text-danger confirmpassword">Passwords
+              don't match</small>
+          </div>
+        </div>
+        <div class="col-lg-12" *ngIf="passwordchk">
+          <button type="submit" name="pass_save" mat-raised-button class="btnsubmitupdate" color="warn">UPDATE</button>
+          <button type="button" class="btn btn-default resetpart btnsubmitreset" (click)="reseteforms('password')">RESET</button>
+        </div>
+        <div class="clearfix"></div>
+        <br>
+      </form>
+    </div>
+  </mat-tab>
+  <mat-tab label="EDIT PRIMARY CONTACT">
+    <div>
+      <br>
+      <div class="col-lg-12" id="primarycontact">
+        <h5 class="col-lg-5">Change your Primary email id
+          <b class="boldprimaryemail">Edit
+            <span class="dots">:</span>
+          </b>
+        </h5>
+        <mat-slide-toggle (change)="emailchk===false?reseteforms('email'):getCustidinformation()" color="primary"
+          [(ngModel)]="emailchk" class="col-lg-1 primartcontact"></mat-slide-toggle>
+      </div>
+      <br>
+      <form #Profilesettingemail="ngForm" novalidate (ngSubmit)="submitemail(Profilesettingemail.value, Profilesettingemail.valid)">
+        <div class="col-lg-12">
+          <div class="form-group col-lg-4">
+            <mat-form-field class="example-full-width">
+              <input matInput name="currentemail" disabled [(ngModel)]="profilesettingobj.currentemail" #currentemail="ngModel"
+                required>
+            </mat-form-field>
+          </div>
+          <div class="form-group  col-lg-4">
+            <mat-form-field [hideRequiredMarker]="true" class="example-full-width">
+              <input matInput (blur)="newemail.valid ? valuesexistornot('email',false,profilesettingobj.newemail) : ''"
+                name="newemail" class="emailpattern" pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" placeholder="New Email Id"
+                [(ngModel)]="profilesettingobj.newemail" #newemail="ngModel" required [disabled]="emailchk===false">
+              <mat-error *ngIf="newemail.errors && newemail?.errors.required">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="newemail.errors && newemail?.errors.pattern">
+                Email is invalid
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group  col-lg-4">
+            <mat-form-field [hideRequiredMarker]="true" class="example-full-width">
+              <input matInput name="confirmemail" placeholder="Confirm New Email Id" [(ngModel)]="profilesettingobj.confirmemail"
+                #confirmemail="ngModel" required validateEqualTo="newemail" [disabled]="emailchk===false">
+              <mat-error *ngIf="confirmemail.errors && confirmemail?.errors.required">
+                Confirm New Email is required
+              </mat-error>
+            </mat-form-field>
+            <div class="clearfix"></div>
+            <small *ngIf="profilesettingobj.confirmemail!=='' && confirmemail.invalid && !confirmemail.pristine" class="text-danger emailconfirmclass">email
+              and confirm email did not match</small>
+          </div>
+        </div>
+        <div class="col-lg-12" *ngIf="emailchk">
+          <button type="submit" name="email_save" mat-raised-button class="btnsubmitupdate" color="warn">UPDATE</button>
+          <button type="button" class="btn btn-default resetpart btnsubmitreset" (click)="reseteforms('email')">RESET</button>
+        </div>
+        <div class="clearfix"></div>
+      </form>
+      <hr>
+      <div>
+        <div class="col-lg-12" id="primarycontact1">
+          <h5 class="col-lg-5">Change your Primary Contact Number
+            <b class="marginleftedit">Edit
+              <span class="dots">:</span>
+            </b>
+          </h5>
+          <mat-slide-toggle color="primary" (change)="bindcountrycodesnumber();mobilechk===false?reseteforms('mobile'):getCustidinformation();"
+            [(ngModel)]="mobilechk" class="col-lg-1 primartemail"></mat-slide-toggle>
+        </div>
+        <br>
+        <form #Profilesettingnumform="ngForm" novalidate (ngSubmit)="submitnumber(Profilesettingnumform.value, Profilesettingnumform.valid)">
+          <div class="col-lg-12">
+            <div class="form-group  col-lg-4">
+              <mat-form-field class="example-full-width">
+                <input matInput name="currentmobilenum" [(ngModel)]="numberobj.currentmobilenum" disabled=""
+                  #currentmobilenum="ngModel">
+              </mat-form-field>
+            </div>
+            <div class="form-group  col-lg-4">
+              <mat-form-field [hideRequiredMarker]="true">
+                <mat-select name="country" placeholder="Country Code" [(ngModel)]="numberobj.countrycode" #country="ngModel"
+                  [disabled]="mobilechk===false" required>
+                  <mat-option *ngFor="let cat of countryarray" value="{{cat.value}}">
+                    {{cat.label}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="country.errors && country?.errors.required"> CountryCode is required.</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-group  col-lg-4">
+              <mat-form-field [hideRequiredMarker]="true" class="example-full-width">
+                <input matInput (blur)="confmnewph.valid ? valuesexistornot('mobile',true,numberobj.confmnewph) : ''"
+                  minlength="10" name="confmnewph" pattern="[0-9]{1}[0-9]{9}" maxlength="10" [disabled]="mobilechk===false"
+                  placeholder="New Mobile Number" [(ngModel)]="numberobj.confmnewph" #confmnewph="ngModel" required
+                  (keypress)="__commonservice._keyPressnumber($event)">
+                <mat-error *ngIf="confmnewph.errors && confmnewph?.errors.required"> Primary Number is required.</mat-error>
+              </mat-form-field>
+              <div *ngIf="confmnewph.errors && Profilesettingnumform.submitted" class="text-danger">
+                <div *ngIf="confmnewph?.errors.minlength" class="errorclass changefont" id="colormobilepart"> Must be a
+                  valid 10 digit phone number. </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12" *ngIf="mobilechk">
+            <button type="submit" name="num_save" mat-raised-button color="warn" class="btnsubmitupdate">UPDATE</button>
+            <button type="button" class="btn btn-default resetpart btnsubmitreset" (click)="reseteforms('mobile')">RESET</button>
+          </div>
+          <div class="clearfix"></div>
+          <br>
+        </form>
+        <p></p>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="MANAGE ALERTS">
+    <div id="manalaerts">
+      <br>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h5 class="col-lg-5  col-md-5 col-sm-12 col-xs-12 emailalertspart">Change the Email alerts settings
+          <b class="marginleftedit1">Edit
+            <span class="dots">:</span>
+          </b>
+        </h5>
+        <mat-slide-toggle (change)="managealerts===false?reseteforms('alerts'):getCustidinformation()" [(ngModel)]="managealerts"
+          color="primary" class="col-lg-1 profilesettingstoggle"></mat-slide-toggle>
+      </div>
+      <br>
+      <form #Profilesettingalerts="ngForm" novalidate (ngSubmit)="submitmanagealers(Profilesettingalerts.value, Profilesettingalerts.valid);Profilesettingalerts.valid?Profilesettingalerts.resetForm():'';">
+        <div class="col-lg-12  col-md-12 col-sm-12 col-xs-12">
+          <div class="form-group col-lg-6 col-md-4 col-sm-12 col-xs-12">
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+              <h5 class="emailcolor">
+                Receive alerts by Email </h5>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+              <mat-radio-group name="mailyes" [(ngModel)]="managealers.mailyes" [disabled]="managealerts===false"
+                #mailyes="ngModel">
+                <mat-radio-button color="warn" value="1">Yes</mat-radio-button>
+                <mat-radio-button color="primary" value="0">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12 recivealerts" *ngIf="false">
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+              <h5 class="emailcolor">Receive alerts by SMS</h5>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+              <mat-radio-group name="smsyes" [(ngModel)]="managealers.smsyes" [disabled]="managealerts===false" #smsyes="ngModel">
+                <mat-radio-button color="accent" value="1">Yes</mat-radio-button>
+                <mat-radio-button color="primary" value="0">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 alertspart" *ngIf="managealerts">
+          <button type="submit" name="pass_save" mat-raised-button class="btnsubmitupdate" color="warn">UPDATE</button>
+          <button type="button" (click)="reseteforms('alerts')" class="btn btn-default resetpart btnsubmitreset">RESET</button>
+        </div>
+        <div class="clearfix"></div>
+        <br>
+      </form>
+      <p></p>
+    </div>
+  </mat-tab>
+  <mat-tab label="DELETE PROFILE">
+    <div id="deleteprofiles">
+      <br>
+      <div class="col-lg-12">
+        <h5 class="col-lg-6 paddingzero">To delete your kaakateeya profile permanently.
+          <b class="marginzero">Edit
+            <span class="dots">:</span>
+          </b>
+        </h5>
+        <mat-slide-toggle (change)="deletechk===false?reseteforms('delete'):getCustidinformation()" [(ngModel)]="deletechk"
+          color="primary" class="col-lg-1 deletetoggle"></mat-slide-toggle>
+      </div>
+      <br>
+      <form #Profilesettingdeleteform="ngForm" novalidate (ngSubmit)="submitdelete(Profilesettingdeleteform.value, Profilesettingdeleteform.valid)"
+        class="form">
+        <div class="col-lg-12">
+          <div class="form-group">
+            <mat-form-field [hideRequiredMarker]="true" class="example-full-width shortform">
+              <textarea maxlength="150" class="form-control textreason" matInput placeholder="Reason" [disabled]="deletechk===false"
+                rows="5" name="delete" id="comment" [(ngModel)]="deleteobj.delete" #delete="ngModel" required></textarea>
+              <small [hidden]="delete.valid || (delete.pristine && !Profilesettingdeleteform.submitted)" class="text-danger">
+                Reason is required. </small>
+            </mat-form-field>
+            <span class="lettersfromto123" [ngClass]="{'errorclass': delete.invalid && delete.touched}">{{deleteobj.delete!==''
+              && deleteobj.delete!==null && deleteobj.delete!==undefined?deleteobj.delete.length:0}}
+              / 150</span>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <mat-checkbox color="warn" [disabled]="deletechk===false" name="chkdelete" class="example-margin" [(ngModel)]="deleteobj.chkdelete"
+            required #chkdelete="ngModel">Delete my profile permanently
+            <span class="redcolor">*</span>
+          </mat-checkbox>
+          <small [hidden]="chkdelete.valid || (chkdelete.pristine && !Profilesettingdeleteform.submitted)" class="text-danger">
+            Required. </small>
+        </div>
+        <div class="clearfix"></div>
+        <br>
+        <div class="col-lg-12" *ngIf="deletechk">
+          <button type="submit" name="pass_save" mat-raised-button class="marginleftbtn" color="warn">UPDATE</button>
+          <button type="button" (click)="reseteforms('delete')" class="btn btn-default resetpart">RESET</button>
+        </div>
+        <div class="clearfix"></div>
+        <br>
+      </form>
+      <p></p>
+    </div>
+  </mat-tab>
+</mat-tab-group>
