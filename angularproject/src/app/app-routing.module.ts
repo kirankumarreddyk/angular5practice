@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: './accordian/accordian.module#AccordianModule'
   },
   {
+    path: 'datepicker',
+    loadChildren: './datepicker/datepicker.module#DatepickerModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
