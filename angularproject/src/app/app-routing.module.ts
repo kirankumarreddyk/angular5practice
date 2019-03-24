@@ -62,6 +62,10 @@ const routes: Routes = [
     path: 'popup',
     loadChildren: './popup/popup.module#PopupModule'
   },
+  {
+    path: 'hidevalidation',
+    loadChildren: './hidevalidation/hidevalidation.module#HidevalidationModule'
+  },
   
   {
     path: '',
