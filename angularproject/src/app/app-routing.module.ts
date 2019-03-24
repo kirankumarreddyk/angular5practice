@@ -127,6 +127,10 @@ const routes: Routes = [
     loadChildren: './matvalidations/matvalidations.module#MatvalidationsModule'
   },
   {
+    path: 'inputconfirmpaswd',
+    loadChildren: './inputconfirmpaswd/inputconfirmpaswd.module#InputconfirmpaswdModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

@@ -1,0 +1,32 @@
+<form id="loginformforget" #epasswordform="ngForm" novalidate (ngSubmit)="emailpasswordsubmit(epasswordform.value, epasswordform.valid)">
+  <div class="field_group">
+    <span class="title">New Password</span>
+    <span class="inputs"><input type="password" name="emailpassword" [(ngModel)]="emailpasswordobj.emailpassword"
+        #emailpassword="ngModel" required minlength="6" maxlength="16">
+      <br>
+      <div *ngIf="emailpassword.errors && epasswordform.submitted" class="text-danger emailreq">
+        <div *ngIf="emailpassword?.errors.required">
+          New Password is required
+        </div>
+        <div *ngIf="emailpassword?.errors.minlength">
+          Password must be at least 6 characters long.
+        </div>
+      </div>
+    </span>
+  </div>
+  <div class="field_group psdgroup">
+    <span class="title">Confirm Password</span>
+    <span class="inputs"><input type="password" name="cnfmpassword" [(ngModel)]="emailpasswordobj.cnfmpassword"
+        #cnfmpassword="ngModel" validateEqualTo="emailpassword" required>
+      <br>
+      <div *ngIf="cnfmpassword.errors && epasswordform.submitted" class="text-danger emailreq">
+        <small *ngIf="cnfmpassword?.errors.required" class="text-danger passwordrequired">
+          Confirm password is required.
+        </small>
+        <small *ngIf="emailpasswordobj.cnfmpassword!=='' && cnfmpassword.invalid && !cnfmpassword.pristine" class="text-danger passwordrequired">Passwords
+          don't match</small>
+      </div>
+    </span>
+  </div>
+  <div id="submit_boxforget"><button type="submit" class="btn btn-primary" id="login_button">Login</button></div>
+</form>
