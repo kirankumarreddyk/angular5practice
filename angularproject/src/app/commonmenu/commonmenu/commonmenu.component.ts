@@ -13,7 +13,7 @@ export class CommonmenuComponent implements OnInit {
       if (event instanceof NavigationStart) {
         this.commonurlforclass = event.url;
         if (event === undefined || event.url === undefined || event.url === '/' || event.url === '/' || event.url === '' ||
-          event.url === '/capcha' 
+          event.url === '/sliders' 
         ) {
           this.menuhideurl = false;
         } else {

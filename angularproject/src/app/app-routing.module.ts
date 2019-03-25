@@ -132,6 +132,15 @@ const routes: Routes = [
   },
   {
     path: '',
+    loadChildren: './sliders/sliders.module#SlidersModule'
+  },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
     redirectTo: '',
     pathMatch: 'full'
   }
