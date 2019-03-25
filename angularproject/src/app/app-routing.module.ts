@@ -135,6 +135,10 @@ const routes: Routes = [
     loadChildren: './sliders/sliders.module#SlidersModule'
   },
   {
+    path: 'dropdowncounts',
+    loadChildren: './dropdowncounts/dropdowncounts.module#DropdowncountsModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
