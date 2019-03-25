@@ -12,8 +12,9 @@ export class CommonfooterComponent implements OnInit {
     this.__roter.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         this.commonurlforclass = event.url;
-        if (event === undefined || event.url === undefined || event.url === '' ||
-          event.url === '/sliders')  {
+        if (event === undefined || event.url === undefined || event.url === '/' || event.url === '/' || event.url === '' ||
+        event.url === '/sliders' )
+        {
           this.footerhideurl = false;
         } else {
           this.footerhideurl = true;
