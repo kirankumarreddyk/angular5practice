@@ -2,32 +2,32 @@
   <div class="col-md-12 form-group">
             <label class="p-label">Working Type  <span class="p-imp">*</span></label>
             <div class="controls matcontrols" id="employeeinpart">
-                <!-- <mat-radio-group name="workingpart" [(ngModel)]="professionobj.workingpart" #workingpart="ngModel" required (change)="notworkingchange(professionobj.workingpart)">
+                <mat-radio-group name="workingpart" [(ngModel)]="professionobj.workingpart" #workingpart="ngModel" required (change)="notworkingchange(professionobj.workingpart)">
                     <mat-radio-button value="0">Not Working</mat-radio-button>
                     <mat-radio-button value="1">Working</mat-radio-button>
-                </mat-radio-group> -->
-                <!-- <small [hidden]="workingpart.valid || (workingpart.pristine && !professionform.submitted)" class="text-danger ">
+                </mat-radio-group>
+                <small [hidden]="workingpart.valid || (workingpart.pristine && !professionform.submitted)" class="text-danger ">
                    Working Type is required.
-            </small> -->
+            </small>
             </div>
             </div>
             <div class="col-md-12 form-group">
                 <label class="p-label">Employed In  <span class="p-imp">*</span></label>
                 <div class="controls" id="employeeinpart">
-                    <!-- <ss-multiselect-dropdown name="employedIn" [options]="visastatusarray" [texts]="myTexts" [settings]="mysingleSettings" [(ngModel)]="professionobj.employedIn" required #employedIn="ngModel"></ss-multiselect-dropdown>
+                    <ss-multiselect-dropdown name="employedIn" [options]="visastatusarray" [texts]="myTexts" [settings]="mysingleSettings" [(ngModel)]="professionobj.employedIn" required #employedIn="ngModel"></ss-multiselect-dropdown>
                     <small *ngIf="(employedIn.invalid && professionform.submitted) ||((employedIn.valid) && (professionobj.employedIn !== null && professionobj.employedIn.toString()===''))" class="text-danger ">
                                 Employed In is required.
-                    </small> -->
+                    </small>
                 </div>
             </div>
                 <div *ngIf="professionobj.workingpart==='0'?false:true" class="col-md-12 form-group">
                     <label class="p-label">Professional Group<span class="p-imp">*</span></label>
                     <div class="controls clearfix" id="employeeinpart">
-                        <!-- <ss-multiselect-dropdown name="professionalGroup" [options]="visastatusarray" [texts]="myTexts" [settings]="mysingleSettings" [(ngModel)]="professionobj.professionalGroup" #professionalGroup="ngModel" 
+                        <ss-multiselect-dropdown name="professionalGroup" [options]="visastatusarray" [texts]="myTexts" [settings]="mysingleSettings" [(ngModel)]="professionobj.professionalGroup" #professionalGroup="ngModel" 
                             [required]="professionobj.workingpart==='0'?false:true"></ss-multiselect-dropdown>
                         <small *ngIf="(professionalGroup.invalid && professionform.submitted) ||((professionalGroup.valid) &&  (professionobj.professionalGroup !== null && professionobj.professionalGroup.toString()===''))" class="text-danger ">
                             Professional Group is required.
-                            </small> -->
+                            </small>
                     </div>
                 </div>
                 <!-- checkbox hide validation -->
@@ -38,10 +38,10 @@
                   <div class="col-md-12 form-group p-margin p-padding" *ngIf="professionobj.HouseWife===true?false:true">
                       <label class="p-label">Profession Category<span class="p-imp">*</span></label>
                       <div class="controls clearfix" id="employeeinpart">
-                          <!-- <ss-multiselect-dropdown name="professionCategoryId" [options]="visastatusarray" [texts]="myTexts" [settings]="mysingleSettings" [(ngModel)]="professionobj.professionCategoryId" #professionCategoryId="ngModel" required></ss-multiselect-dropdown>
+                          <ss-multiselect-dropdown name="professionCategoryId" [options]="visastatusarray" [texts]="myTexts" [settings]="mysingleSettings" [(ngModel)]="professionobj.professionCategoryId" #professionCategoryId="ngModel" required></ss-multiselect-dropdown>
                           <small *ngIf="(((professionCategoryId.invalid && professionform.submitted) ||((professionCategoryId.valid) && professionobj.professionCategoryId!==null && professionobj.professionCategoryId.toString()==='')) && (professionobj.HouseWife===false))" class="text-danger">
                                       Profession Category is required.
-                          </small> -->
+                          </small>
                       </div>
                   </div>
                   <!-- checkbox hide validation -->

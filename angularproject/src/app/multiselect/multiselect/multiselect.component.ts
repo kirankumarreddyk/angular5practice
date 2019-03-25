@@ -18,9 +18,9 @@ export class MultiselectComponent implements OnInit {
  public Categoryarray = [];
   public EducationCategoryarray = [];
   public MaritalStatusarray = [];
-  // mySettings = Arraysbindings.mySettings;
-  // mysingleSettings = Arraysbindings.mysingleSettings;
-  // myTexts = Arraysbindings.myTexts;
+  mySettings = Arraysbindings.mySettings;
+  mysingleSettings = Arraysbindings.mysingleSettings;
+  myTexts = Arraysbindings.myTexts;
 
   constructor() { 
     this.Categoryarray = Arraysbindings.Category;

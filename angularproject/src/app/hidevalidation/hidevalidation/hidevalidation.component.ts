@@ -12,8 +12,8 @@ export class HidevalidationComponent implements OnInit {
   @ViewChild(NgForm) professionform: NgForm;
   public professionobj: Hidevalidationinterface;
   public visastatusarray = [];
-  // public mysingleSettings = Arraysbindings.mysingleSettings;
-  // public myTexts = Arraysbindings.myTextsSingle;
+  public mysingleSettings = Arraysbindings.mysingleSettings;
+  public myTexts = Arraysbindings.myTextsSingle;
   constructor() { 
     this.visastatusarray = Arraysbindings.visastatus;
   }

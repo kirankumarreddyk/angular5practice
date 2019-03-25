@@ -1,4 +1,4 @@
-// import { IMultiSelectTexts, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
+import { IMultiSelectTexts, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
 export class Arraysbindings {
     public static Category = [
         { 'name': 'Select', 'id': '' },
@@ -53,57 +53,57 @@ export class Arraysbindings {
         return numArr;
     }
 
-// public static mySettings: IMultiSelectSettings = {
-//     enableSearch: true,
-//     checkedStyle: 'checkboxes',
-//     buttonClasses: 'btn btn-default btn-block multiselect',
-//     dynamicTitleMaxItems: 2,
-//     displayAllSelectedText: true,
-//     showUncheckAll: true,
-//     showCheckAll: true,
-//     pullRight: true,
-//     containerClasses: 'containerwidth',
-//     closeOnClickOutside: true
-// };
-//  public static mysingleSettings: IMultiSelectSettings = {
-//     enableSearch: true,
-//     checkedStyle: 'glyphicon',
-//     buttonClasses: 'btn btn-default btn-block multiselect',
-//     dynamicTitleMaxItems: 1,
-//     displayAllSelectedText: true,
-//     showUncheckAll: false,
-//     showCheckAll: false,
-//     pullRight: true,
-//     containerClasses: 'containerwidth',
-//     selectionLimit: 1,
-//     autoUnselect: true,
-//     closeOnSelect: true,
-//     closeOnClickOutside: true
-// };
-// public static myTexts: IMultiSelectTexts = {
-//     checkAll: 'Select all',
-//     uncheckAll: 'Unselect all',
-//     checked: 'item selected',
-//     checkedPlural: 'items selected',
-//     searchPlaceholder: 'Find',
-//     searchEmptyResult: 'Nothing found...',
-//     searchNoRenderText: 'Type in search box to see results...',
-//     defaultTitle: 'Select',
-//     allSelected: 'All selected'
-// };
-// public static myTextsSingle: IMultiSelectTexts = {
-//     checkAll: 'Select all',
-//     uncheckAll: 'Unselect all',
-//     checked: 'item selected',
-//     checkedPlural: 'items selected',
-//     searchPlaceholder: 'Find',
-//     searchEmptyResult: 'Nothing found...',
-//     searchNoRenderText: 'Type in search box to see results...',
-//     defaultTitle: 'Select',
-//     allSelected: 'Select'
-// };
+public static mySettings: IMultiSelectSettings = {
+    enableSearch: true,
+    checkedStyle: 'checkboxes',
+    buttonClasses: 'btn btn-default btn-block multiselect',
+    dynamicTitleMaxItems: 2,
+    displayAllSelectedText: true,
+    showUncheckAll: true,
+    showCheckAll: true,
+    pullRight: true,
+    containerClasses: 'containerwidth',
+    closeOnClickOutside: true
+};
+ public static mysingleSettings: IMultiSelectSettings = {
+    enableSearch: true,
+    checkedStyle: 'glyphicon',
+    buttonClasses: 'btn btn-default btn-block multiselect',
+    dynamicTitleMaxItems: 1,
+    displayAllSelectedText: true,
+    showUncheckAll: false,
+    showCheckAll: false,
+    pullRight: true,
+    containerClasses: 'containerwidth',
+    selectionLimit: 1,
+    autoUnselect: true,
+    closeOnSelect: true,
+    closeOnClickOutside: true
+};
+public static myTexts: IMultiSelectTexts = {
+    checkAll: 'Select all',
+    uncheckAll: 'Unselect all',
+    checked: 'item selected',
+    checkedPlural: 'items selected',
+    searchPlaceholder: 'Find',
+    searchEmptyResult: 'Nothing found...',
+    searchNoRenderText: 'Type in search box to see results...',
+    defaultTitle: 'Select',
+    allSelected: 'All selected'
+};
+public static myTextsSingle: IMultiSelectTexts = {
+    checkAll: 'Select all',
+    uncheckAll: 'Unselect all',
+    checked: 'item selected',
+    checkedPlural: 'items selected',
+    searchPlaceholder: 'Find',
+    searchEmptyResult: 'Nothing found...',
+    searchNoRenderText: 'Type in search box to see results...',
+    defaultTitle: 'Select',
+    allSelected: 'Select'
+};
 }
 
 
 
-// npm install angular - 2 - dropdown - multiselect--save
+// npm install angular - 2 - dropdown - multiselect--save (or) npm install angular-2-dropdown-multiselect --save
