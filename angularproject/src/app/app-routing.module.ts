@@ -139,6 +139,10 @@ const routes: Routes = [
     loadChildren: './dropdowncounts/dropdowncounts.module#DropdowncountsModule'
   },
   {
+    path: 'alerts',
+    loadChildren: './alerts/alerts.module#AlertsModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
