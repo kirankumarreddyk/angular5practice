@@ -143,6 +143,10 @@ const routes: Routes = [
     loadChildren: './alerts/alerts.module#AlertsModule'
   },
   {
+    path: 'button',
+    loadChildren: './button/button.module#ButtonModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
