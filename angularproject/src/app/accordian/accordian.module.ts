@@ -6,7 +6,7 @@ import { AccordianComponent } from './accordian/accordian.component';
 import { FormsModule } from '@angular/forms'
 import { FilterPipe } from './../filter.pipe';
 // 2nd 
-import { AccordionModule } from 'ngx-bootstrap';
+import { AccordionModule } from 'ngx-bootstrap'; 
 @NgModule({
   declarations: [AccordianComponent,FilterPipe],
   imports: [
