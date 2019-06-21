@@ -1,0 +1,24 @@
+<h2 class = "tp-h2">Checkbox configuration</h2>
+<section class = "tp-section">
+   <mat-checkbox class = "tp-margin" [(ngModel)] = "checked">Checked</mat-checkbox>
+   <mat-checkbox class = "tp-margin" [(ngModel)] = "indeterminate">Indeterminate</mat-checkbox>
+</section> 
+<section class = "tp-section">
+   <mat-checkbox class = "tp-margin" [(ngModel)] = "disabled">Disabled</mat-checkbox>
+</section>
+<h2 class = "tp-h2">Result</h2>
+<section class = "tp-section">
+   <mat-checkbox class = "tp-margin" [(ngModel)] = "checked"  [(indeterminate)] = "indeterminate" [labelPosition] = "labelPosition"
+      [disabled] = "disabled">
+      Sample Checkbox
+   </mat-checkbox>
+    <mat-checkbox class="tp-margin" [(ngModel)]="checked" >
+      Sample Checkbox
+    </mat-checkbox>
+    <mat-checkbox class="tp-margin" [(indeterminate)] = "indeterminate">
+      Sample Checkbox
+    </mat-checkbox>
+    <mat-checkbox class="tp-margin"  [disabled] = "disabled">
+      Sample Checkbox
+    </mat-checkbox>
+</section>

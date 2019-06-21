@@ -147,6 +147,14 @@ const routes: Routes = [
     loadChildren: './button/button.module#ButtonModule'
   },
   {
+    path: 'checkdisabled',
+    loadChildren: './checkdisabled/checkdisabled.module#CheckdisabledModule'
+  },
+  {
+    path: 'clickevent',
+    loadChildren: './clickevent/clickevent.module#ClickeventModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

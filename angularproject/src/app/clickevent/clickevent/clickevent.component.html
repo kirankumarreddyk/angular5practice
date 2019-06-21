@@ -1,0 +1,286 @@
+<div class="container" id="totalsearch">
+  <div class="col-lg-12 agepadding enterquery1">
+    <br>
+    <div class="col-md-2 changewidth">
+        <ul id="keywordlinkspart">
+          <li><a  (click)="customerdetails('Customer');" [ngClass]="this.activebutton==='Customer'?'backclass':''">Candidate Details</a></li>
+          <li><a  (click)="customerdetails('father');" [ngClass]="this.activebutton==='father'?'backclass':''">Father Details</a></li>
+          <li><a  (click)="customerdetails('mother');" [ngClass]="this.activebutton==='mother'?'backclass':''" >Mother Details</a></li>
+          <li><a  (click)="customerdetails('spouse');" [ngClass]="this.activebutton==='spouse'?'backclass':''" >Spouse Details</a></li>
+          <li><a  (click)="customerdetails('allfields');" [ngClass]="this.activebutton==='allfields'?'backclass':''" >All Fields</a></li>
+          <li><a  (click)="customerdetails('cbrother');" [ngClass]="this.activebutton==='cbrother'?'backclass':''" >Candidate Brother</a></li>
+          <li><a  (click)="customerdetails('csister');" [ngClass]="this.activebutton==='csister'?'backclass':''" >Candidate Sister</a></li>
+          <li><a  (click)="customerdetails('fbsister');" [ngClass]="this.activebutton==='fbsister'?'backclass':''" >Father Brother&Sister</a></li>
+          <li><a  (click)="customerdetails('mbsister');" [ngClass]="this.activebutton==='mbsister'?'backclass':''" >Mother Brother&Sister</a></li>
+          <li><a  (click)="customerdetails('reference');" [ngClass]="this.activebutton==='reference'?'backclass':''">Reference</a> </li>
+          <li class="partnerpart"><a  (click)="customerdetails('partner');" [ngClass]="this.activebutton==='partner'?'backclass':''" >Partner</a></li>
+        </ul>
+    </div>
+   
+    <div class="col-lg-2 listtrue" *ngIf="customergrid==='1'? true: false">
+       <h1>Personal Details</h1>
+         <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul class="heightpart" id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:0:17; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckPersonalDetails ==='1') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckPersonalDetails === '1' && item.Text !=='C Personal All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+             
+         </ul>
+    </div>
+     <div class="col-lg-2 listtrue" *ngIf="customergrid==='1'? true: false">
+       <h1>Education Details</h1>
+         <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul class="heightpart" id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:17:34; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckEducationDetails ==='18') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckEducationDetails === '18' && item.Text !=='C Education All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+             
+         </ul>
+    </div>
+     <div class="col-lg-2 listtrue" *ngIf="customergrid==='1'? true: false">
+       <h1>Profession Details</h1>
+         <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul class="heightpart" id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:34:55; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(Checkuncheckboxes ==='35') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(Checkuncheckboxes === '35' && item.Text !=='C profession All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+             
+         </ul>
+    </div>
+      <div class="col-lg-2 listtrue" *ngIf="customergrid==='1'? true: false">
+       <h1>Astro Details</h1>
+         <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul class="heightpart" id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:55:69; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckAstroDetails ==='56') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckAstroDetails === '56' && item.Text !=='C Astro All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+             
+         </ul>
+    </div>
+     <div class="col-lg-2 listtrue" *ngIf="customergrid==='1'? true: false">
+       <h1>Property Details</h1>
+         <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul class="heightpart" id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:69:89; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckPropertyDetails ==='70') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckPropertyDetails === '70' && item.Text !=='C Property All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+             
+         </ul>
+    </div>
+    <div class="col-lg-3" *ngIf="customergrid==='2'? true: false">
+      <h1>Father Details</h1>
+         <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:89:103; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckFatherAll ==='90') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckFatherAll === '90' && item.Text !=='Father All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+         </ul>
+    </div>
+    <div class="col-lg-3" *ngIf="customergrid==='3'? true: false">
+      <h1 class="mdetails">Mother Details</h1>
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:103:118; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckMotherAll ==='104') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckMotherAll === '104' && item.Text !=='Mother All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+         </ul>
+    </div>
+    <div class="col-lg-3" *ngIf="customergrid==='4'? true: false">
+      <h1>Spouse Details</h1>
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:204:219; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckSpouseAll ==='205') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckSpouseAll === '205' && item.Text !=='Spouse All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+         </ul>
+    </div>
+    <div class="col-lg-3" *ngIf="customergrid==='5'? true: false">
+      <h1 class="mdetails">All Fields</h1>
+        <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:220:227; let i=index" value="{{item.value}}">
+                 <!-- <div [ngClass]="(CheckPersonalDetails ==='1') ? 'allbackColor' : 'checkuncolor' "> -->
+                 <mat-checkbox   [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 <!-- </div> -->
+             </li>
+         </ul>
+    </div>
+    <div class="col-lg-3" *ngIf="customergrid==='6'? true: false">
+      <h1 class="mdetails">Customer Brother </h1>
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:118:128; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckCustomerBrotherAll ==='119') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckCustomerBrotherAll === '119' && item.Text !=='Customer Brother All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+         </ul>
+    </div>
+    <div class="col-lg-3" *ngIf="customergrid==='6'? true: false">
+      <h1 class="mdetails">Customer Brother Wife</h1>
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:128:140; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckCustomerBrotherAll ==='119') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckCustomerBrotherAll === '119' && item.Text !=='Customer Brother All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+         </ul>
+    </div>
+    <div class="col-lg-3" *ngIf="customergrid==='7'? true: false">
+      <h1 class="mdetails">Customer Sister </h1>
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:140:150; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckCustomerSisterAll ==='141') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckCustomerSisterAll === '141' && item.Text !=='Customer Sister All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+         </ul>
+    </div>
+     <div class="col-lg-3" *ngIf="customergrid==='7'? true: false">
+      <h1 class="mdetails">Customer Sister Husband</h1>
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:150:162; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckCustomerSisterAll ==='141') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckCustomerSisterAll === '141' && item.Text !=='Customer Sister All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+         </ul>
+    </div>
+    <div class="col-lg-3" *ngIf="customergrid==='8'? true: false">
+      <h1>Father Brother</h1>
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:162:170; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckFatherBrotherAll ==='163') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckFatherBrotherAll === '163' && item.Text !=='Father Brother All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+         </ul>
+    </div>
+     <div class="col-lg-3" *ngIf="customergrid==='8'? true: false">
+      <h1 class="mdetails">Father Sister</h1>
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:170:183; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckFatherSisterAll ==='171') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckFatherSisterAll === '171' && item.Text !=='Father Sister All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+         </ul>
+    </div>
+    <div class="col-lg-3" *ngIf="customergrid==='9'? true: false">
+      <h1 class="mdetails">Mother Brother</h1>
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:183:191; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckMotherBrotherAll ==='184') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckMotherBrotherAll === '184' && item.Text !=='Mother Brother All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+         </ul>
+    </div>
+     <div class="col-lg-3" *ngIf="customergrid==='9'? true: false">
+      <h1 class="mdetails">Mother Sister</h1>
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:191:204; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckMotherSisterAll ==='192') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckMotherSisterAll === '192' && item.Text !=='Mother Sister All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+         </ul>
+    </div>
+    <div class="col-lg-3" *ngIf="customergrid==='10'? true: false">
+      <h1  class="mdetails">Reference</h1>
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:226:240; let i=index" value="{{item.value}}">
+                 <div [ngClass]="(CheckReferenceAll ==='227') ? 'allbackColor' : 'checkuncolor' ">
+                 <mat-checkbox  [disabled] ="(CheckReferenceAll === '227' && item.Text !=='Reference All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 </div>
+             </li>
+         </ul>
+    </div>
+    <div class="col-lg-3" *ngIf="customergrid==='11'? true: false">
+      <h1 class="mdetails">Partner 1</h1>
+        <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:240:252; let i=index" value="{{item.value}}">
+                 <!-- <div [ngClass]="(CheckPersonalDetails ==='1') ? 'allbackColor' : 'checkuncolor' "> -->
+                 <mat-checkbox  [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 <!-- </div> -->
+             </li>
+         </ul>
+    </div>
+    <div class="col-lg-3" *ngIf="customergrid==='11'? true: false">
+      <h1 class="mdetails">Partner 2</h1>
+        <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+             <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:250:268; let i=index" value="{{item.value}}">
+                 <!-- <div [ngClass]="(CheckPersonalDetails ==='1') ? 'allbackColor' : 'checkuncolor' "> -->
+                 <mat-checkbox   [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                     <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
+                 </mat-checkbox>
+                 <!-- </div> -->
+             </li>
+         </ul>
+    </div>
+  </div>
+</div>
