@@ -155,6 +155,14 @@ const routes: Routes = [
     loadChildren: './clickevent/clickevent.module#ClickeventModule'
   },
   {
+    path: 'shpassword',
+    loadChildren: './shpassword/shpassword.module#ShpasswordModule'
+  },
+  {
+    path: 'elseif',
+    loadChildren: './elseif/elseif.module#ElseifModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
