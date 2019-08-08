@@ -14,6 +14,7 @@ export function getAccordionConfig(): AccordionConfig {
    //  2nd
 })
 export class AccordianComponent implements OnInit {
+  iscollapsed: boolean = true;
   public faqsarray: any[] = [];
   public queryString: any;
   constructor() { 
@@ -65,6 +66,10 @@ export class AccordianComponent implements OnInit {
     item.activeClass = (item.styleanswer === true ? 'faqs_list_main_item active' : 'faqs_list_main_item');
   };
   ngOnInit() {
+  }
+  // 3rd
+  togglecollapse(){
+    this.iscollapsed = !this.iscollapsed;
   }
 
 }

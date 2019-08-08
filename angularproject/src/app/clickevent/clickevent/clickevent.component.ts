@@ -6,7 +6,8 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./clickevent.component.css']
 })
 export class ClickeventComponent implements OnInit {
-
+  public customergrid = '1';
+ public activebutton = 'Customer';
   constructor(private __router: Router, private activatedRoute: ActivatedRoute, ) {
     let params: any = this.activatedRoute.snapshot.params;
     this.activatedRoute = params.id;

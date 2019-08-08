@@ -41,3 +41,15 @@
     <p>Content 2</p>
   </accordion-group>
 </accordion>
+
+
+<!-- 3rd accordian -->
+<div class="row">
+  <h1>Collapse</h1>
+  <!-- <button (click)= "togglecollapse()">Expand / Collapse</button>  -->
+  <button *ngIf="iscollapsed" (click)= "togglecollapse()">Expand</button> 
+  <button *ngIf="!iscollapsed" (click)= "togglecollapse()">Collapse</button> 
+  <div *ngIf="!iscollapsed">
+    dfhbdfhdfhdfhdf
+  </div>
+</div>

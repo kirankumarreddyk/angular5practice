@@ -163,6 +163,10 @@ const routes: Routes = [
     loadChildren: './elseif/elseif.module#ElseifModule'
   },
   {
+    path: 'print',
+    loadChildren: './print/print.module#PrintModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
