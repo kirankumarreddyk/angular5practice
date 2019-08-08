@@ -167,6 +167,14 @@ const routes: Routes = [
     loadChildren: './print/print.module#PrintModule'
   },
   {
+    path: 'ngifngfor',
+    loadChildren: './ngifngfor/ngifngfor.module#NgifngforModule'
+  },
+  {
+    path: 'ngtemplate',
+    loadChildren: './ngtemplate/ngtemplate.module#NgtemplateModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

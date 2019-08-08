@@ -1,0 +1,49 @@
+<h3 style="color: red">ng-template with ngIf</h3>
+<button type="button" (click)="onToggle1()">Toggle</button>
+
+<ng-template [ngIf]= "toggleFlag1" >
+   <div>Hello World!</div>
+</ng-template>
+<!-- 2nd -->
+<h3 style="color: red">ng-template with ngIf-else</h3>
+
+<button type="button" (click)="onToggle2()">Toggle</button>
+
+<div *ngIf="toggleFlag2; else msgElseBlock" >
+   <div>Hello World!</div>
+</div>
+
+<ng-template #msgElseBlock>
+   <div>Else Block: Hello World! </div>
+</ng-template>
+
+<!-- 3rd -->
+<h3 style="color: red">ng-template with ngIf-then-else</h3>
+
+<button type="button" (click)="onToggle3()">Toggle</button>
+
+<div *ngIf="toggleFlag3; then thenBlock else elseBlock">
+
+</div>
+<ng-template #thenBlock>
+    <div>Then Block: Hello World!</div>
+</ng-template>
+<ng-template #elseBlock>
+    <div>Else Block: Hello World!</div>
+</ng-template> 
+<!-- 4th -->
+<h3 style="color: red">ng-template with ngSwitch</h3>
+<input type="radio" name="direction" (click)="myDir='east'">East
+<input type="radio" name="direction" (click)="myDir='west'">West
+<input type="radio" name="direction" (click)="myDir='north'">North
+<input type="radio" name="direction" (click)="myDir='south'">South
+<br/><br/>
+<div [ngSwitch]="myDir">
+  <ng-template [ngSwitchCase]= "'east'"> Go to <b>East</b> Direction </ng-template>
+  <ng-template [ngSwitchCase]= "'west'"> Go to <b>West</b> Direction </ng-template>
+  <ng-template [ngSwitchCase]= "'north'"> Go to <b>North</b> Direction </ng-template>
+  <ng-template [ngSwitchCase]= "'south'">Go to <b>South</b> Direction </ng-template>
+  <ng-template ngSwitchDefault> No Direction </ng-template>
+</div> 
+
+<!-- 5th -->
