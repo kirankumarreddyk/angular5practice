@@ -175,6 +175,10 @@ const routes: Routes = [
     loadChildren: './ngtemplate/ngtemplate.module#NgtemplateModule'
   },
   {
+    path: 'scrollspy',
+    loadChildren: './scrollspy/scrollspy.module#ScrollspyModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
