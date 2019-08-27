@@ -179,6 +179,10 @@ const routes: Routes = [
     loadChildren: './scrollspy/scrollspy.module#ScrollspyModule'
   },
   {
+    path: 'reactiveformvalidation',
+    loadChildren: './reactiveformvalidation/reactiveformvalidation.module#ReactiveformvalidationModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

@@ -3,6 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  // url: 'http://qa.kaakateeya.com/api/kaakateeya/',
+  //   urltoken: 'http://qa.kaakateeya.com/api/',
+    
   production: false,
   sitekey: '6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU'
 };
