@@ -183,6 +183,14 @@ const routes: Routes = [
     loadChildren: './reactiveformvalidation/reactiveformvalidation.module#ReactiveformvalidationModule'
   },
   {
+    path: 'uploadimage',
+    loadChildren: './uploadimage/uploadimage.module#UploadimageModule'
+  },
+  {
+    path: 'dependencyinjection',
+    loadChildren: './dependencyinjection/dependencyinjection.module#DependencyinjectionModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

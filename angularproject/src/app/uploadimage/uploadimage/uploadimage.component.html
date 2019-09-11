@@ -1,0 +1,6 @@
+<p>
+  uploadimage works!
+</p>
+<input style="display: none" type="file" (change)="onfileselected($event)" #fileInput>
+<button type="button" (click)="fileInput.click()">pick file</button>
+<button type="button" (click)="onupload()">upload</button>
