@@ -40,6 +40,10 @@
 
   </ul>
 </div>
+<br><br>
+<!-- <div class="nr-header-right" *ngIf="bannershows"> -->
+  <input type="text" (click)="showbhide=!showbhide" (click)="toggle()" value="{{buttonName}}">
+<!-- </div> -->
 <!-- show and hide button -->
 
 
@@ -87,3 +91,25 @@
 </div>
 
 <!--4 menu bottom content edit close -->
+<!-- 5th -->
+<br><br>
+<form action="javascript:;">
+    <div class="form-group" *ngIf="isNameSelected">
+      <label for="name">name :</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+  
+    <br>
+  
+    <div class="form-group" *ngIf="!isNameSelected">
+      <label for="address">address:</label>
+      <input type="text" class="form-control" id="address">
+    </div>
+    <br/>
+  
+   <select (change)="selectInput($event)">
+    <option value="Value-1">Value-1</option>
+    <option value="Value-2">Value-2</option>
+  </select>
+  
+  </form>

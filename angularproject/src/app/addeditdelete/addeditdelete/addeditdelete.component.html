@@ -86,3 +86,12 @@
   </p-column>
 </p-dataTable>
 <!-- add delete edit -->
+
+<!-- <add></add> -->
+<input #newHero
+      (keyup.enter)="addHero(newHero.value)"
+      (blur)="addHero(newHero.value); newHero.value='' ">
+
+    <button (click)="addHero(newHero.value)">Add</button>
+
+    <ul><li *ngFor="let hero of heroes">{{hero}}</li></ul>

@@ -65,5 +65,11 @@ getData() {
 
 };
 // ADD EDIT AND DELETE
-
+// add last
+heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
+  addHero(newHero: string) {
+    if (newHero) {
+      this.heroes.push(newHero);
+    }
+  }
 }

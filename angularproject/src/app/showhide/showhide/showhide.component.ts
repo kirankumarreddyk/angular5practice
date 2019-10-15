@@ -93,4 +93,16 @@ export class ShowhideComponent implements OnInit {
   // 4 end
 
 
+  // 5th
+  isNameSelected: boolean;
+  selectInput(event) {
+    let selected = event.target.value;
+    if (selected == "Value-1") {
+      this.isNameSelected = true;
+    } else {
+      this.isNameSelected = false;
+    }
+  }
+
+
 }
