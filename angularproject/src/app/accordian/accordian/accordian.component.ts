@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccordionConfig } from 'ngx-bootstrap/accordion';
+import { HttpClient } from '@angular/common/http';
 //2nd
 export function getAccordionConfig(): AccordionConfig {
   return Object.assign(new AccordionConfig(), { closeOthers: true });
@@ -17,7 +18,8 @@ export class AccordianComponent implements OnInit {
   iscollapsed: boolean = true;
   public faqsarray: any[] = [];
   public queryString: any;
-  constructor() { 
+
+  constructor( private http: HttpClient) { 
     this.faqsarray = [{
       label: `How do I Bookmark profile?`,
       value: `In every profile that you view, you will see the blue colour Bookmark option. Click on the button to bookmark the profile for future reference. You may then choose from the list of filtered profiles from “Bookmarked Profiles” on the left pane to express interest in suitable profiles.`
@@ -66,6 +68,7 @@ export class AccordianComponent implements OnInit {
     item.activeClass = (item.styleanswer === true ? 'faqs_list_main_item active' : 'faqs_list_main_item');
   };
   ngOnInit() {
+  
   }
   // 3rd
   togglecollapse(){
@@ -73,3 +76,5 @@ export class AccordianComponent implements OnInit {
   }
 
 }
+
+

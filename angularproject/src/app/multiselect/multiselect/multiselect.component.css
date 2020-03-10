@@ -25,4 +25,5 @@
 }
  ::ng-deep .bacg {
     background-color: #f0f0cc !important;
+    color: red;
 }

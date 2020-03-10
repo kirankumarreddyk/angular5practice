@@ -17,47 +17,68 @@ export class ClickeventComponent implements OnInit {
       case "Customer":
         this.customergrid = '1';
         this.activebutton = 'Customer';
-        // this.__router.navigateByUrl('click/Customer');
+        this.__router.navigateByUrl('clickevent/Customer');
+        // this.txtinputfileds1 = '';
+        // this.txtinputfileds2 = '';
+        // this.txtinputfileds3 = '';
+        // this.txtinputfileds4 = '';
+        // this.txtinputfileds5 = '';
+        // this.txtinputfileds6 = '';
+        // this.txtinputfileds7 = '';
+        // this.txtinputfileds8 = '';
+        // this.txtinputfileds9 = '';
+        // this.txtinputfileds10 = '';
         break;
       case "father":
         this.customergrid = '2';
         this.activebutton = 'father';
+        this.__router.navigateByUrl('clickevent/father');
+        // this.txtinputfileds2 = '';
         break;
       case "mother":
         this.customergrid = '3';
         this.activebutton = 'mother';
+        this.__router.navigateByUrl('clickevent/mother');
         break;
       case "spouse":
         this.customergrid = '4';
         this.activebutton = 'spouse';
+        this.__router.navigateByUrl('clickevent/spouse');
         break;
       case "allfields":
         this.customergrid = '5';
         this.activebutton = 'allfields';
+        this.__router.navigateByUrl('clickevent/allfields');
         break;
       case "cbrother":
         this.customergrid = '6';
         this.activebutton = 'cbrother';
+        this.__router.navigateByUrl('clickevent/cbrother');
         break;
       case "csister":
         this.customergrid = '7';
         this.activebutton = 'csister';
+        this.__router.navigateByUrl('clickevent/csister');
         break;
       case "fbsister":
         this.customergrid = '8';
         this.activebutton = 'fbsister';
+        this.__router.navigateByUrl('clickevent/fbsister');
         break;
       case "mbsister":
         this.customergrid = '9';
         this.activebutton = 'mbsister';
+        this.__router.navigateByUrl('clickevent/mbsister');
         break;
       case "reference":
         this.customergrid = '10';
         this.activebutton = 'reference';
+        this.__router.navigateByUrl('clickevent/reference');
         break;
       case "partner":
         this.customergrid = '11';
         this.activebutton = 'partner';
+        this.__router.navigateByUrl('clickevent/partner');
         break;
     }
 

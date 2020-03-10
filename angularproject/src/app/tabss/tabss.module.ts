@@ -8,6 +8,8 @@ import { TabsModule } from 'ngx-bootstrap'; //1
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap"; //2
 import { from } from 'rxjs';
 
+
+
 @NgModule({
   declarations: [TabssComponent],
   imports: [
@@ -29,3 +31,7 @@ export class TabssModule { }
 // npm install --save @ng-bootstrap/ng-bootstrap
 //2
 
+
+
+
+// https://material.angular.io/components/tabs/examples

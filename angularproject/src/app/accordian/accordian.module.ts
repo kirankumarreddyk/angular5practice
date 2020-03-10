@@ -5,6 +5,7 @@ import { AccordianRoutingModule } from './accordian-routing.module';
 import { AccordianComponent } from './accordian/accordian.component';
 import { FormsModule } from '@angular/forms'
 import { FilterPipe } from './../filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
 // 2nd 
 import { AccordionModule } from 'ngx-bootstrap'; 
 @NgModule({
@@ -13,7 +14,9 @@ import { AccordionModule } from 'ngx-bootstrap';
     CommonModule,
     AccordianRoutingModule,
     FormsModule,
-    AccordionModule
+    AccordionModule,
+    HttpClientModule
   ]
 })
 export class AccordianModule { }
+

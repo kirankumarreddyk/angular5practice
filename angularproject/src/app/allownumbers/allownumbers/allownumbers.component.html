@@ -1,0 +1,8 @@
+<h1>Allow Numbers Only</h1>
+<input (keypress)="numberOnly($event)" type="text"><br>
+<h1>Another way Direct HTML</h1>
+<input onkeyup="this.value=this.value.replace(/[^0-10-9]/g,'');" >
+<br><br>
+<h1>Allow Alphabetic Only</h1>
+ <input onkeyup="this.value=this.value.replace(/[^A-Za-z]/g,'');" >
+

@@ -37,7 +37,7 @@
          <ul class="heightpart" id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:17:34; let i=index" value="{{item.value}}">
                  <div [ngClass]="(CheckEducationDetails ==='18') ? 'allbackColor' : 'checkuncolor' ">
-                 <mat-checkbox  [disabled] ="(CheckEducationDetails === '18' && item.Text !=='C Education All') ? true : false" [(ngModel)]="item.checkvalue" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue);$index_option=true;">
+                 <mat-checkbox  [disabled] ="(CheckEducationDetails === '18' && item.Text !=='C Education All') ? true : false" [(ngModel)]="item.checkvalue1" (click)="onchangeselectlistvalues(item.Text,item.apeendVal,item.checkvalue1);$index_option=true;">
                      <a href="javascript:void(0)" [ngClass]="item.style" class="checkacolor">{{item.Text}}</a>
                  </mat-checkbox>
                  </div>
@@ -89,7 +89,7 @@
     </div>
     <div class="col-lg-3" *ngIf="customergrid==='2'? true: false">
       <h1>Father Details</h1>
-         <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+         <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds1" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:89:103; let i=index" value="{{item.value}}">
                  <div [ngClass]="(CheckFatherAll ==='90') ? 'allbackColor' : 'checkuncolor' ">
@@ -102,7 +102,7 @@
     </div>
     <div class="col-lg-3" *ngIf="customergrid==='3'? true: false">
       <h1 class="mdetails">Mother Details</h1>
-       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds2" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:103:118; let i=index" value="{{item.value}}">
                  <div [ngClass]="(CheckMotherAll ==='104') ? 'allbackColor' : 'checkuncolor' ">
@@ -115,7 +115,7 @@
     </div>
     <div class="col-lg-3" *ngIf="customergrid==='4'? true: false">
       <h1>Spouse Details</h1>
-       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds3" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:204:219; let i=index" value="{{item.value}}">
                  <div [ngClass]="(CheckSpouseAll ==='205') ? 'allbackColor' : 'checkuncolor' ">
@@ -128,7 +128,7 @@
     </div>
     <div class="col-lg-3" *ngIf="customergrid==='5'? true: false">
       <h1 class="mdetails">All Fields</h1>
-        <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+        <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds4" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:220:227; let i=index" value="{{item.value}}">
                  <!-- <div [ngClass]="(CheckPersonalDetails ==='1') ? 'allbackColor' : 'checkuncolor' "> -->
@@ -141,7 +141,7 @@
     </div>
     <div class="col-lg-3" *ngIf="customergrid==='6'? true: false">
       <h1 class="mdetails">Customer Brother </h1>
-       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds5" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:118:128; let i=index" value="{{item.value}}">
                  <div [ngClass]="(CheckCustomerBrotherAll ==='119') ? 'allbackColor' : 'checkuncolor' ">
@@ -167,7 +167,7 @@
     </div>
     <div class="col-lg-3" *ngIf="customergrid==='7'? true: false">
       <h1 class="mdetails">Customer Sister </h1>
-       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds6" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:140:150; let i=index" value="{{item.value}}">
                  <div [ngClass]="(CheckCustomerSisterAll ==='141') ? 'allbackColor' : 'checkuncolor' ">
@@ -180,7 +180,7 @@
     </div>
      <div class="col-lg-3" *ngIf="customergrid==='7'? true: false">
       <h1 class="mdetails">Customer Sister Husband</h1>
-       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds6" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:150:162; let i=index" value="{{item.value}}">
                  <div [ngClass]="(CheckCustomerSisterAll ==='141') ? 'allbackColor' : 'checkuncolor' ">
@@ -193,7 +193,7 @@
     </div>
     <div class="col-lg-3" *ngIf="customergrid==='8'? true: false">
       <h1>Father Brother</h1>
-       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds7" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:162:170; let i=index" value="{{item.value}}">
                  <div [ngClass]="(CheckFatherBrotherAll ==='163') ? 'allbackColor' : 'checkuncolor' ">
@@ -206,7 +206,7 @@
     </div>
      <div class="col-lg-3" *ngIf="customergrid==='8'? true: false">
       <h1 class="mdetails">Father Sister</h1>
-       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds7" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:170:183; let i=index" value="{{item.value}}">
                  <div [ngClass]="(CheckFatherSisterAll ==='171') ? 'allbackColor' : 'checkuncolor' ">
@@ -219,7 +219,7 @@
     </div>
     <div class="col-lg-3" *ngIf="customergrid==='9'? true: false">
       <h1 class="mdetails">Mother Brother</h1>
-       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds8" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:183:191; let i=index" value="{{item.value}}">
                  <div [ngClass]="(CheckMotherBrotherAll ==='184') ? 'allbackColor' : 'checkuncolor' ">
@@ -232,7 +232,7 @@
     </div>
      <div class="col-lg-3" *ngIf="customergrid==='9'? true: false">
       <h1 class="mdetails">Mother Sister</h1>
-       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds8" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:191:204; let i=index" value="{{item.value}}">
                  <div [ngClass]="(CheckMotherSisterAll ==='192') ? 'allbackColor' : 'checkuncolor' ">
@@ -245,7 +245,7 @@
     </div>
     <div class="col-lg-3" *ngIf="customergrid==='10'? true: false">
       <h1  class="mdetails">Reference</h1>
-       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+       <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds9" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:226:240; let i=index" value="{{item.value}}">
                  <div [ngClass]="(CheckReferenceAll ==='227') ? 'allbackColor' : 'checkuncolor' ">
@@ -258,7 +258,7 @@
     </div>
     <div class="col-lg-3" *ngIf="customergrid==='11'? true: false">
       <h1 class="mdetails">Partner 1</h1>
-        <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+        <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds10" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:240:252; let i=index" value="{{item.value}}">
                  <!-- <div [ngClass]="(CheckPersonalDetails ==='1') ? 'allbackColor' : 'checkuncolor' "> -->
@@ -271,7 +271,7 @@
     </div>
     <div class="col-lg-3" *ngIf="customergrid==='11'? true: false">
       <h1 class="mdetails">Partner 2</h1>
-        <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds" placeholder="List of Fields" />
+        <input type="text" class="form-control inputboxpart" [(ngModel)]="txtinputfileds10" placeholder="List of Fields" />
          <ul id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
              <li class="selectoption" id="ss_elem_Np" role="option" *ngFor="let item of Searchfields | slice:250:268; let i=index" value="{{item.value}}">
                  <!-- <div [ngClass]="(CheckPersonalDetails ==='1') ? 'allbackColor' : 'checkuncolor' "> -->

@@ -1,4 +1,4 @@
-#verticaltabs :host {
+/*#verticaltabs :host {
     
     max-width: 1264px;
     width: 100%;
@@ -25,7 +25,7 @@
     }
   #verticaltabs /deep/ .mat-tab-body-wrapper {
         flex: 1 1 auto;
-  }
+  }*/
 
   /* 2 */
 #upgrademembership   ::ng-deep .nav-tabs .nav-item {

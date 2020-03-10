@@ -142,9 +142,14 @@ const routes: Routes = [
     path: 'alerts',
     loadChildren: './alerts/alerts.module#AlertsModule'
   },
+ 
   {
     path: 'button',
     loadChildren: './button/button.module#ButtonModule'
+  },
+   {
+    path: 'disabledsubmit',
+    loadChildren: './disabledsubmit/disabledsubmit.module#DisabledsubmitModule'
   },
   {
     path: 'checkdisabled',
@@ -154,6 +159,10 @@ const routes: Routes = [
     path: 'clickevent',
     loadChildren: './clickevent/clickevent.module#ClickeventModule'
   },
+    {
+    path: 'clickevent/:id',
+    loadChildren: './clickevent/clickevent.module#ClickeventModule'
+  }, 
   {
     path: 'shpassword',
     loadChildren: './shpassword/shpassword.module#ShpasswordModule'
@@ -189,6 +198,26 @@ const routes: Routes = [
   {
     path: 'dependencyinjection',
     loadChildren: './dependencyinjection/dependencyinjection.module#DependencyinjectionModule'
+  },
+   {
+    path: 'allownumbers',
+    loadChildren: './allownumbers/allownumbers.module#AllownumbersModule'
+  },
+    {
+    path: 'getresponse',
+    loadChildren: './getresponse/getresponse.module#GetresponseModule'
+  },
+     {
+    path: 'registrationdetails',
+    loadChildren: './registrationdetails/registrationdetails.module#RegistrationdetailsModule'
+  },
+     {
+    path: 'inputsearch',
+    loadChildren: './inputsearch/inputsearch.module#InputsearchModule'
+  },
+       {
+    path: 'tabrouting',
+    loadChildren: './tabrouting/tabrouting.module#TabroutingModule'
   },
   {
     path: '',

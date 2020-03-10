@@ -1,23 +1,34 @@
 <br>
+<h1 style="color: red;">Mat Tab</h1>
 <br>
 <div class="container" id="verticaltabs">
   <div id="content">
     <div id="main-content">
-      <mat-tab-group>
-        <!-- 1-->
+      <mat-tab-group  [selectedIndex]="activeTab">
         <mat-tab label="Open Tabs">
-      <div>
+          yetjyt
+        </mat-tab>
+        <mat-tab label="Full Tabs" >
+          thtrhtrh
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<h1 style="color: red;">Tab 2</h1><br>
+<div>
         <tabset>
           <tab heading="Basic title" id="tab1">Basic content</tab>
           <tab heading="Basic Title 1">Basic content 1</tab>
           <tab heading="Basic Title 2">Basic content 2</tab>
         </tabset>
       </div>
-        </mat-tab>
-        <!-- 1-->
-        <!-- 2-->
-        <mat-tab label="Full Tabs" >
-          <div>
+
+<br><br><br>
+<h1 style="color: red;">Tab 3</h1><br>
+<div>
             <ngb-tabset id="upgrademembership">
               <ngb-tab>
                 <ng-template ngbTabTitle>
@@ -59,26 +70,17 @@
               </ngb-tab>
             </ngb-tabset>
           </div>
-          <!-- NGFOR -->
-          <div class="row" style="margin-top:10%; margin-left: 5%">
-            <br>
-            <ngb-tabset id="upgrademembership">
+          <br><br><br>
+          <h1 style="color: red;">Tab 4</h1><br>
+           <div class="row">
+                   <ngb-tabset id="upgrademembership">
               <ngb-tab *ngFor="let tab of tabs">
                 <ng-template ngbTabTitle>
                   {{ tab.title }}
                 </ng-template>
                 <ng-template ngbTabContent>
-                  <!-- {{ tab.content }} -->
                   serjdrty
                 </ng-template>
               </ngb-tab>
             </ngb-tabset>
           </div>
-        </mat-tab>
-        <!-- 2-->
-      </mat-tab-group>
-    </div>
-  </div>
-</div>
-<br>
-<br>

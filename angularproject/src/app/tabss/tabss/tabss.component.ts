@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-tabss',
   templateUrl: './tabss.component.html',
-  styleUrls: ['./tabss.component.css']
+  styleUrls: ['./tabss.component.css'],
+  
 })
 export class TabssComponent implements OnInit {
+  
   public tabs; //2
-  constructor() { 
+  constructor(  private router: Router,
+    private route: ActivatedRoute,) { 
     //2
     this.tabs = [
       { title: "foo1", content: "bar1" },
@@ -18,6 +22,7 @@ export class TabssComponent implements OnInit {
   }
 
   ngOnInit() {
+  
   }
-
+ 
 }

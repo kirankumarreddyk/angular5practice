@@ -11,7 +11,7 @@ import { from } from 'rxjs';
   declarations: [
     AppComponent,
     CommonmenuComponent,
-    CommonfooterComponent
+    CommonfooterComponent,
   ],
   imports: [
     BrowserModule,
